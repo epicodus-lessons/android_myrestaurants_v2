@@ -69,7 +69,16 @@ public class RestaurantsActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     mRestaurants = restaurantService.processResults(response);
                 }
-            }
+
+                RestaurantsActivity.this.runOnUiThread(new Runnable() {
+
+                    @Override
+                    public void run() {
+
+                    }
+
+                });
+            };
 
         });
     }
