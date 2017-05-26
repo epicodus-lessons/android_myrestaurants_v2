@@ -31,14 +31,6 @@ public class RestaurantsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_restaurants);
         ButterKnife.bind(this);
 
-        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String restaurant = ((TextView)view).getText().toString();
-                Toast.makeText(RestaurantsActivity.this, restaurant, Toast.LENGTH_LONG).show();
-            }
-        });
-
         Intent intent = getIntent();
         String location = intent.getStringExtra("location");
 
