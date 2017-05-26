@@ -9,9 +9,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import okhttp3.Callback;
 
 public class RestaurantsActivity extends AppCompatActivity {
     @Bind(R.id.locationTextView) TextView mLocationTextView;
@@ -43,5 +43,12 @@ public class RestaurantsActivity extends AppCompatActivity {
 
         mLocationTextView.setText("Here are all the restaurants near: " + location);
     }
+
+    private void getRestaurants() {
+        final RestaurantService restaurantService = new RestaurantService();
+        restaurantService.findRestaurants(new Callback() {
+        });
+    }
+
 }
 
