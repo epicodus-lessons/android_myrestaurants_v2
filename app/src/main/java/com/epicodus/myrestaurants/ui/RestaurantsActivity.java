@@ -9,7 +9,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.epicodus.myrestaurants.R;
-import com.epicodus.myrestaurants.RestaurantService;
+import com.epicodus.myrestaurants.services.RestaurantService;
 import com.epicodus.myrestaurants.models.Restaurant;
 
 import java.io.IOException;
