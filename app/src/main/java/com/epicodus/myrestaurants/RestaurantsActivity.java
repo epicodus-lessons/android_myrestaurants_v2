@@ -9,8 +9,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.io.IOException;
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import okhttp3.Call;
 import okhttp3.Callback;
 
 public class RestaurantsActivity extends AppCompatActivity {
@@ -47,6 +49,12 @@ public class RestaurantsActivity extends AppCompatActivity {
     private void getRestaurants() {
         final RestaurantService restaurantService = new RestaurantService();
         restaurantService.findRestaurants(new Callback() {
+
+            @Override
+            public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
+            }
+
         });
     }
 
